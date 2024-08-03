@@ -69,7 +69,7 @@ public class SslHealthIndicator extends AbstractHealthIndicator {
 			}
 			else if (statuses.contains(Validity.Status.WILL_EXPIRE_SOON)) {
 				// TODO: Should we introduce Status.WARNING
-				//  (returns 200 but indicates that something is not right)?
+				// (returns 200 but indicates that something is not right)?
 				builder.status(WILL_EXPIRE_SOON_STATUS);
 			}
 			else {

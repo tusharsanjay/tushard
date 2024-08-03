@@ -89,7 +89,8 @@ public class SslInfo {
 
 		private List<Certificate> getCertificates(String alias, KeyStore keyStore) {
 			try {
-				return List.of(keyStore.getCertificateChain(alias));
+				Certificate[] certificateChain = keyStore.getCertificateChain(alias);
+				return (certificateChain != null) ? List.of(certificateChain) : Collections.emptyList();
 			}
 			catch (KeyStoreException ex) {
 				return Collections.emptyList();
